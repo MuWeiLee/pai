@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李牧微 | 产品与部门管理作品集</title>
+    <style>
+        /* 简约黑白设计 */
+        body {
+            font-family: 'Helvetica Neue', 'Arial', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+        }
+
+        /* --- Header 简约设计 --- */
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+            color: #000000;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+            color: #333333;
+        }
+
+        .contact-info {
+            font-size: 0.9em;
+            margin-top: 5px;
+            color: #666666;
+        }
+
+        /* --- Section 标题样式 --- */
+        .section-title {
+            font-size: 1.3em;
+            color: #000000;
+            margin-bottom: 8px;
+            margin-top: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .job-entry {
+            margin-bottom: 25px;
+        }
+
+        .job-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #000000;
+        }
+
+        .company-name {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 5px;
+        }
+
+        .job-details ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 5px;
+        }
+
+        .job-details li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .job-details li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #000000;
+        }
+
+        .reporting-line {
+            font-size: 0.85em;
+            color: #666666;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        /* --- 核心专长简约样式 --- */
+        .highlights {
+            background-color: #fafafa;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+
+        .highlight-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .highlight-tags span {
+            display: inline-block;
+            background-color: #333333;
+            color: #ffffff;
+            padding: 6px 12px;
+            margin: 0;
+            font-size: 0.85em;
+            font-weight: 400;
+            border-radius: 2px;
+            line-height: 1.3;
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+
+        .highlight-tags span:nth-child(1) {
+            background-color: #2c3e50;
+        }
+
+        .highlight-tags span:nth-child(2) {
+            background-color: #34495e;
+        }
+
+        .highlight-tags span:nth-child(3) {
+            background-color: #7f8c8d;
+        }
+
+        .highlight-tags span:nth-child(4) {
+            background-color: #95a5a6;
+        }
+
+        .highlight-tags span:nth-child(5) {
+            background-color: #bdc3c7;
+            color: #2c3e50;
+        }
+
+        /* 重点数据样式 */
+        .data-highlight {
+            font-weight: 600;
+            color: #000000;
+            text-decoration: underline;
+        }
+        .tech-highlight {
+            font-weight: 600;
+            color: #000000;
+        }
+
+        /* --- 教育经历简约样式 --- */
+        .education-entry {
+            margin-bottom: 10px;
+        }
+
+        .education-entry strong {
+            display: inline-block;
+            min-width: 120px;
+            font-weight: 600;
+        }
+
+        /* --- 作品集样式 --- */
+        .portfolio-grid {
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-item {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            background-color: #fafafa;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            color: #000000;
+        }
+
+        .portfolio-item .project-type {
+            font-size: 0.9em;
+            color: #666666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .portfolio-item .project-description {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-item .project-title {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-item .project-results {
+            font-size: 0.85em;
+            color: #000000;
+            font-weight: 500;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 8px;
+            margin-top: 10px;
+        }
+
+        .portfolio-item .tech-tags {
+            margin-top: 8px;
+        }
+
+        .portfolio-item .tech-tags span {
+            display: inline-block;
+            background-color: #333333;
+            color: #ffffff;
+            padding: 2px 8px;
+            margin: 2px 4px 2px 0;
+            font-size: 0.75em;
+            font-weight: 400;
+        }
+
+        /* 列点样式 */
+        .bullet-points {
+            margin: 8px 0;
+            padding-left: 15px;
+            list-style-type: disc;
+        }
+
+        .bullet-points li {
+            margin-bottom: 4px;
+            line-height: 1.4;
+            font-size: 0.9em;
+        }
+
+        .description-content {
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        /* --- 流程图样式 --- */
+        .flowchart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .flow-step {
+            background-color: #f5f5f5;
+            border: 1px solid #333333;
+            padding: 8px 12px;
+            font-size: 0.85em;
+            text-align: center;
+            min-width: 80px;
+            border-radius: 2px;
+        }
+
+        .flow-arrow {
+            font-size: 1.2em;
+            color: #333333;
+            font-weight: bold;
+        }
+
+        /* --- 新的三栏布局样式 (2:1:1) --- */
+        .portfolio-item {
+            background-color: #ffffff;
+            border: 1px solid #333333;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .portfolio-content {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .portfolio-text {
+            flex: 1; /* 文字区域占1份 */
+        }
+
+        .portfolio-flowchart {
+            flex: 1; /* 图片区域占1份 */
+            display: flex;
+            gap: 8px;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .portfolio-flowchart img {
+            flex: 1;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* 当只有一张图片时，让图片更大 */
+        .portfolio-flowchart:has(> img:only-child) img {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        /* 当有三张图片时，前两张并排，第三张在下方 */
+        .portfolio-flowchart:has(> img:nth-child(3)) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .portfolio-flowchart:has(> img:nth-child(3)) img:nth-child(1),
+        .portfolio-flowchart:has(> img:nth-child(3)) img:nth-child(2) {
+            flex: 0 0 calc(48% - 4px);
+            width: calc(48% - 4px);
+            margin-bottom: 8px;
+        }
+
+        .portfolio-flowchart:has(> img:nth-child(3)) img:nth-child(3) {
+            flex: 0 0 100%;
+            width: 100%;
+            margin: 8px 0 0 0;
+            margin-bottom: 0;
+        }
+
+        .flowchart-vertical {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 8px;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .flow-step-vertical {
+            background-color: #f5f5f5;
+            border: 1px solid #333333;
+            padding: 6px 12px;
+            font-size: 0.75em;
+            text-align: center;
+            min-width: 100px;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .flow-arrow-vertical {
+            font-size: 1em;
+            color: #333333;
+            font-weight: bold;
+            transform: rotate(90deg);
+            line-height: 1;
+        }
+
+        /* 流程图容器样式 */
+        .flowchart-container {
+            border: 2px solid #333333;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #fafafa;
+            margin: 10px 0;
+        }
+
+        .flowchart-title {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #333333;
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* --- 移动端适配 --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            .contact-info {
+                font-size: 0.85em;
+                line-height: 1.4;
+            }
+            
+            .section-title {
+                font-size: 1.2em;
+                margin-top: 15px;
+            }
+            
+            .highlights {
+                padding: 12px 15px;
+                margin-bottom: 15px;
+            }
+            
+            .highlight-tags ul {
+                padding-left: 20px;
+            }
+            
+            .highlight-tags li {
+                margin-bottom: 8px;
+                line-height: 1.4;
+            }
+            
+            .job-entry {
+                margin-bottom: 20px;
+            }
+            
+            .job-title, .company-name {
+                font-size: 1em;
+                line-height: 1.3;
+            }
+            
+            .job-details li {
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+            
+            /* 作品集移动端布局 */
+            .portfolio-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .portfolio-text {
+                flex: none;
+                width: 100%;
+            }
+            
+            .portfolio-flowchart {
+                flex: none;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .portfolio-flowchart img {
+                max-width: 100%;
+                width: 100%;
+            }
+            
+            .portfolio-item {
+                padding: 15px;
+            }
+            
+            .portfolio-item h3 {
+                font-size: 1em;
+            }
+            
+            .portfolio-item .project-description {
+                font-size: 0.85em;
+            }
+            
+            /* 流程图移动端适配 */
+            .flowchart-container {
+                padding: 12px;
+                margin: 8px 0;
+            }
+            
+            .flowchart-title {
+                font-size: 0.8em;
+                margin-bottom: 10px;
+            }
+            
+            .flow-step-vertical {
+                font-size: 0.7em;
+                padding: 4px 8px;
+                min-width: 80px;
+            }
+            
+            .flow-arrow-vertical {
+                font-size: 0.9em;
+            }
+            
+            .bullet-points li {
+                font-size: 0.85em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .contact-info {
+                font-size: 0.8em;
+            }
+            
+            .section-title {
+                font-size: 1.1em;
+            }
+            
+            .highlights {
+                padding: 10px 12px;
+            }
+            
+            .highlight-tags li {
+                font-size: 0.9em;
+            }
+            
+            .job-details li {
+                font-size: 0.85em;
+            }
+            
+            .portfolio-item {
+                padding: 12px;
+            }
+            
+            .portfolio-item .project-description {
+                font-size: 0.8em;
+            }
+            
+            .bullet-points li {
+                font-size: 0.8em;
+            }
+            
+            .flow-step-vertical {
+                font-size: 0.65em;
+                padding: 3px 6px;
+                min-width: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>李牧微</h1>
+            <p>产品与部门管理</p>
+            <div class="contact-info">
+                +86 139 1607 4336 &bull; <a href="mailto:leemuwei@qq.com" style="color: inherit; text-decoration: none;">leemuwei@qq.com</a>
+            </div>
+            <div class="contact-info">
+                6 年工作经验 | 部门经理 | 台湾籍 | 现居上海 | 1994.02
+            </div>
+        </div>
+
+        <div class="highlights">
+            <h2 class="section-title">核心专长</h2>
+            <div class="highlight-tags">
+                <ul>
+                    <li>AI 投研平台规划：研究流程拆解、平台能力抽象、产品路线规划</li>
+                    <li>AI 应用落地：AIGC / RAG / 多模态 / Agent / 调用链设计</li>
+                    <li>研究内容资产化：会议、路演、研报等非结构化内容结构化沉淀</li>
+                    <li>产品与体验设计：可独立完成 PRD 与高保真设计，把控整体体验风格</li>
+                    <li>跨角色协作：长期与研究员、内容团队、技术团队共建产品</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">工作经历</h2>
+
+        <div class="job-entry">
+            <div class="company-name">万得信息技术股份有限公司（Wind）｜2022/07 – 至今</div>
+            <div class="job-title">ONE-移动-机构移动2部｜部门经理 (2025/10 – 至今)</div>
+            <div class="job-details">
+                <ul>
+                    <li>负责面向个人投研工具的移动端产品规划，构建 <span class="tech-highlight">AI 辅助研究能力</span></li>
+                    <li>设计覆盖信息获取、分析、策略的 <span class="tech-highlight">智能分析 Agent</span>，提升研究效率与信息理解深度</li>
+                    <li>设计 <span class="tech-highlight">workflow</span> 与智能问答流程，对语音问答底层 AI 服务进行监控与优化</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job-entry">
+            <div class="job-title">FTG-3C｜部门经理 (2024/10 – 2025/10)</div>
+            <div class="job-details">
+                <ul>
+                    <li>从 0 到 1 构建上市公司会议研究体系，覆盖近 <span class="data-highlight">5000 家</span>上市公司，形成标准化内容资产</li>
+                    <li>打通路演、研报、公告等研究数据，构建统一研究内容底座，支撑多业务线使用</li>
+                    <li>引入 <span class="tech-highlight">低代码 AI 编排架构（Dify）</span>，重构会议加工链路，提升迭代效率与稳定性</li>
+                    <li>主导 <span class="tech-highlight">智能会议助理</span> 建设，AI 自动入会、生成纪要、摘要与要点提炼，降低会议成本</li>
+                    <li>将部门任务 <span class="tech-highlight">SOP 化</span> 与 AI 能力结合，推动团队非技术成员参与 AI 工作流配置</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="job-entry">
+            <div class="job-title">FTG-3C-产品研发部｜产品经理 (2022/07 – 2024/10)</div>
+            <div class="job-details">
+                <ul>
+                    <li>构建多维度投研内容标签体系，结合平台渠道拓展，月粉提升 <span class="data-highlight">20–30%</span></li>
+                    <li>规划路演内容 <span class="tech-highlight">AIGC 总结</span>、数据提炼，以及问答、<span class="tech-highlight">RAG 全链路流程</span>，单日会议浏览<span class="data-highlight">翻倍</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job-entry">
+            <div class="company-name">威盛电子（VIA）｜教育服务部｜2019/07 – 2021/11</div>
+            <div class="job-title">产品经理 / UIUX设计师</div>
+            <div class="job-details">
+                <ul>
+                    <li>负责教育平台产品规划与体验设计，具备 <span class="tech-highlight">从设计到产品的完整能力</span></li>
+                    <li>具备 <span class="tech-highlight">系统复杂度较高产品</span> 的架构与交互设计经验</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">教育经历</h2>
+        <div class="job-entry">
+            <div class="company-name">2016 – 2019｜台北科技大学 ｜硕士｜交互设计</div>
+        </div>
+        <div class="job-entry">
+            <div class="company-name">2012 – 2016｜高雄师范大学 ｜学士｜工业设计</div>
+        </div>
+
+        <h2 class="section-title">产品与体验能力</h2>
+        <div class="job-entry">
+            <div class="job-details">
+                <ul>
+                    <li>从投研业务流程出发进行产品架构与交互设计，将复杂研究逻辑转化为清晰、可复用的平台体验。</li>
+                    <li>可独立完成 <span class="tech-highlight">PRD</span> 与高保真设计，并从整体视觉风格与信息层级角度把控平台体验一致性。</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">代表作品</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <h3>推荐系统</h3>
+                <div class="project-type">2022/07 - 2023/01</div>
+                <div class="portfolio-content">
+                    <div class="portfolio-text">
+                        <div class="project-title">基于路演内容的标签体系构建</div>
+                        <div class="project-description">
+                            <div class="project-title">项目背景</div>
+                            <div class="description-content">
+                                路演内容以非结构化文本为主，缺乏可用于推荐的标准化特征，难以支撑精细化内容分发与用户画像构建。
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <div class="project-title">解决方案</div>
+                            <ul class="bullet-points">
+                                <li>构建以路演字幕为核心的数据加工流程，对非结构化文本进行标签化处理</li>
+                                <li>通过实体识别（NER）与词袋模型（BoW）抽取候选关键词</li>
+                                <li>基于 TF-IDF 计算关键词权重，筛选区分度高的核心词汇</li>
+                                <li>形成覆盖行业、领域与内容特征的非结构化标签体系</li>
+                            </ul>
+                        </div>
+                        <div class="project-description">
+                            <div class="project-title">业务应用</div>
+                            <ul class="bullet-points">
+                                <li>推荐策略上优先使用结构化标签（行业 / 领域）进行召回</li>
+                                <li>结合非结构化标签进行精细化排序与匹配，实现「千人千面」路演推荐</li>
+                                <li>同步沉淀用户观看行为，反向补充用户兴趣标签</li>
+                            </ul>
+                        </div>
+                        <div class="project-title">基于万得数据的用户标签扩展</div>
+                        <div class="project-description">
+                            <div class="project-title">项目背景</div>
+                            <div class="description-content">
+                                单一内容标签难以全面刻画用户兴趣，需要引入更强的外部数据进行用户画像增强。
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <div class="project-title">解决方案</div>
+                            <ul class="bullet-points">
+                                <li>接入用户自选股数据，并映射至对应的概念板块</li>
+                                <li>以概念板块作为更高质量的语义特征，对路演内容标签进行加权</li>
+                                <li>扩展非结构化标签权重，提升用户与内容的匹配精度</li>
+                            </ul>
+                        </div>
+                        <div class="project-description">
+                            <div class="project-title">落地场景</div>
+                            <ul class="bullet-points">
+                                <li>用于会议消息推送的人工配置与半自动推荐机制</li>
+                                <li>隐性应用于万得 3C 会议首页的路演回放推荐</li>
+                                <li>对未开始会议，基于会议简介生成标签并纳入推荐算法</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            月活增长 20-30%
+                        </div>
+                        <div class="tech-tags">
+                            <span>推荐算法</span>
+                            <span>标签体系</span>
+                            <span>用户画像</span>
+                            <span>内容分发</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-flowchart">
+                        <div class="flowchart-container">
+                            <div class="flowchart-title">基于路演内容的标签体系构建</div>
+                            <div class="flowchart-vertical">
+                                <div class="flow-step-vertical">路演生成字幕</div>
+                                <div class="flow-arrow-vertical">→</div>
+                                <div class="flow-step-vertical">实体识别划词</div>
+                                <div class="flow-arrow-vertical">→</div>
+                                <div class="flow-step-vertical">BoW抽词</div>
+                                <div class="flow-arrow-vertical">→</div>
+                                <div class="flow-step-vertical">TF-IDF计算</div>
+                                <div class="flow-arrow-vertical">→</div>
+                                <div class="flow-step-vertical">关键词加权</div>
+                                <div class="flow-arrow-vertical">→</div>
+                                <div class="flow-step-vertical">用户观看</div>
+                                <div class="flow-arrow-vertical">→</div>
+                                <div class="flow-step-vertical">形成用户标签</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-container">
+                            <div class="flowchart-title">基于万得数据的用户标签扩展</div>
+                            <div class="flowchart-vertical">
+                                <div class="flow-step-vertical">自选股</div>
+                                <div class="flow-arrow-vertical">→</div>
+                                <div class="flow-step-vertical">概念板块</div>
+                                <div class="flow-arrow-vertical">→</div>
+                                <div class="flow-step-vertical">概念词</div>
+                                <div class="flow-arrow-vertical">→</div>
+                                <div class="flow-step-vertical">用户标签</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-header">
+                    <h3 class="project-title">智能路演</h3>
+                    <span class="project-type">2023/02-2024/02</span>
+                </div>
+                <div class="portfolio-content">
+                    <div class="portfolio-text">
+                        <div class="project-description">
+                            <div class="project-title">基于 AIGC 的会议纪要与数据提炼</div>
+                            <div class="project-title">项目背景</div>
+                            <div class="description-content">
+                                路演内容时长长、信息密度高，人工整理成本高且一致性差。
+                            </div>
+                            <div class="project-title">解决方案</div>
+                            <ul class="bullet-points">
+                                <li>接入大模型能力，通过 Prompt Engineering + 调用链设计，对路演内容进行自动化总结</li>
+                                <li>按行业 / 领域对 Prompt 进行差异化设计</li>
+                                <li>对长文本进行循环拆解，分段提炼要点后再进行合并输出</li>
+                            </ul>
+                            <div class="project-title">内容结构设计</div>
+                            <div class="description-content">
+                                将 AI 总结拆分为四个稳定产出模块：
+                            </div>
+                            <ul class="bullet-points">
+                                <li>摘要：快速理解会议核心</li>
+                                <li>纪要：分段要点总结</li>
+                                <li>数据：核心指标与趋势提取</li>
+                                <li>问答：针对业绩发布场景的补充说明</li>
+                            </ul>
+                            <div class="description-content">
+                                通过持续优化 Prompt 与调用链，显著提升生成效率与稳定性。
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <div class="project-title">基于视觉识别的纪要补充（多模态）</div>
+                            <div class="project-title">升级方向</div>
+                            <ul class="bullet-points">
+                                <li>引入路演关键帧抽取能力</li>
+                                <li>对关键帧进行 OCR 识别，提取图表与文本信息</li>
+                            </ul>
+                            <div class="project-title">双路径处理策略</div>
+                            <ul class="bullet-points">
+                                <li>路径一：基于字幕 + 分段文本进行纪要生成</li>
+                                <li>路径二：基于图片结构先形成内容框架，再补充会议纪要</li>
+                            </ul>
+                            <div class="description-content">
+                                实现从 纯音频 → 文本 → 视觉信息 → 多模态纪要 的完整升级。
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">AIGC</span>
+                                <span class="tech-tag">多模态处理</span>
+                                <span class="tech-tag">Prompt Engineering</span>
+                                <span class="tech-tag">RAG</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-flowchart">
+                        <img src="img/5-定制化纪要.PNG" alt="定制化纪要">
+                        <img src="img/4-抽帧生成纪要.PNG" alt="抽帧生成纪要">
+                        <img src="img/10-智能纪要.png" alt="智能纪要">
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-header">
+                    <h3 class="project-title">调用低代码化</h3>
+                    <span class="project-type">2025/02-2025/08</span>
+                </div>
+                <div class="portfolio-content">
+                    <div class="portfolio-text">
+                        <div class="project-description">
+                            <div class="project-title">AI 调用链重构（Dify 架构）</div>
+                            <div class="project-title">项目背景</div>
+                            <div class="description-content">
+                                原有 AI 调用逻辑分散，调试与迭代成本高，难以支持快速产品演进。
+                            </div>
+                            <div class="project-title">解决方案</div>
+                            <ul class="bullet-points">
+                                <li>引入 Dify 作为统一的 AI 编排与调用平台</li>
+                                <li>将万得 3C 会议相关 AI 能力整体迁移至低代码架构</li>
+                                <li>与产品经理在 2 个月内完成会议加工链的整体重构</li>
+                                <li>扩展行业 Know-How、列点与分段逻辑</li>
+                                <li>根据会议类型设计差异化的定制纪要流程</li>
+                            </ul>
+                        </div>
+                        <div class="project-description">
+                            <div class="project-title">内部工作流智能化</div>
+                            <div class="project-title">组织赋能</div>
+                            <ul class="bullet-points">
+                                <li>基于 Cursor、Dify 等工具进行内部培训</li>
+                                <li>培养 3 位无技术背景的运营人员，独立完成低代码任务编排</li>
+                                <li>引导团队梳理日常工作的 SOP 流程，并用 AI 实现自动化</li>
+                            </ul>
+                            <div class="project-title">落地成果</div>
+                            <ul class="bullet-points">
+                                <li>业绩发布软文自动生成</li>
+                                <li>业绩日历自动整理</li>
+                                <li>AI 海报生成</li>
+                                <li>显著减少重复性人工工作</li>
+                            </ul>
+                        </div>
+                        <div class="project-results">
+                            2 个月内完成会议加工链重构
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">低代码</span>
+                            <span class="tech-tag">调用链重构</span>
+                            <span class="tech-tag">AI 赋能</span>
+                            <span class="tech-tag">流程自动化</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-flowchart">
+                        <img src="img/9-Dify流程设计.png" alt="Dify流程设计">
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-header">
+                    <h3 class="project-title">智能参会</h3>
+                    <span class="project-type">2025/04-2025/07</span>
+                </div>
+                <div class="portfolio-content">
+                    <div class="portfolio-text">
+                        <div class="project-description">
+                            <div class="project-title">音频智能转纪要</div>
+                            <ul class="bullet-points">
+                                <li>基于原有会议纪要能力，支持用户上传或录制音频</li>
+                                <li>自动完成转写、内容拆解与重点提炼</li>
+                                <li>支持 PC 端在线编辑、引用会议内容</li>
+                            </ul>
+                        </div>
+                        <div class="project-description">
+                            <div class="project-title">链接转记 / AI 机器人参会</div>
+                            <ul class="bullet-points">
+                                <li>从「必须人工参会录音」升级为 AI 机器人自动入会录制</li>
+                                <li>支持用户提供音视频链接，自动解析并生成会议纪要</li>
+                                <li>实现"无需参会即可获取完整会议信息"的体验升级</li>
+                            </ul>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">音频处理</span>
+                            <span class="tech-tag">自动转写</span>
+                            <span class="tech-tag">AI 机器人</span>
+                            <span class="tech-tag">会议智能化</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-flowchart">
+                        <img src="img/12-智能参会.png" alt="智能参会功能展示3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="portfolio-header">
+                    <h3 class="project-title">峰会策划</h3>
+                    <span class="project-type">2023/05, 2025/09</span>
+                </div>
+                <div class="portfolio-content">
+                    <div class="portfolio-text">
+                        <div class="project-description">
+                            <div class="project-title">线下论坛与峰会统筹</div>
+                            <ul class="bullet-points">
+                                <li>参与2023年港交所科技论坛的筹备与执行</li>
+                                <li>协助统筹报名系统、现场流程与直播服务</li>
+                                <li>会后将从选题、嘉宾邀约、报名、现场执行到直播的完整流程沉淀为SOP文档</li>
+                                <li>2025年作为统筹角色，协同多部门完成「点金香江论坛」的策划与落地</li>
+                            </ul>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">活动策划</span>
+                            <span class="tech-tag">跨部门协作</span>
+                            <span class="tech-tag">流程沉淀</span>
+                            <span class="tech-tag">SOP</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-flowchart">
+                        <img src="img/13-线下论坛.JPG" alt="线下论坛活动现场">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
